@@ -6,7 +6,6 @@ const cors = require('cors');
 const dataRouter= require('./route/data');
 require('dotenv').config();
 
-
 const port =process.env.PORT
 const app =express();
 
@@ -17,15 +16,15 @@ app.use('/api', dataRouter);
 
 app.get('/', async(req, res)=>{
     res.send('This is the main page');
-})
+});
 
 app.listen(port, async ()=>{
     try {
        await connection;
-       console.log('Connected to server'); 
+       console.log('Connected to server success!'); 
     } catch (error) {
         console.log(error);
     }
 
-    console.log(`listening to server  ${port}`)
+    console.log(`listening to server  ${port}`);
 });
