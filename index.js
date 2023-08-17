@@ -27,4 +27,4 @@ app.listen(port, async ()=>{
     }
 
     console.log(`listening to server  ${port}`)
-})
+});
