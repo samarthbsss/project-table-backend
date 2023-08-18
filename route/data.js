@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const DataModel= require('../model/data.model');
 
+mongoose.set('strictQuery', true);
+
 router.get('/data', async (req, res) => {
     try {
       const data = await DataModel.find();
