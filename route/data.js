@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const DataModel= require('../model/data.model');
+const mongoose= require('mongoose');
 
 mongoose.set('strictQuery', true);
 
