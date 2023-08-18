@@ -38,13 +38,14 @@ router.post('/data', async (req, res) => {
   
  router.delete('/data/:id', async (req, res) => {
     try {
-      const id = req.params.id;
+      const { id } = req.params;
       await DataModel.findByIdAndRemove(id);
-      const data = await DataModel.find();
-      res.json(data);
+      // const data = await DataModel.find();
+      res.json({ message: 'Employee deleted successfully' });
+      // res.json(data);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: 'Server error' });
+      res.status(500).json({ error: `Server error ${error}` });
     }
   });
   
