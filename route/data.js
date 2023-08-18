@@ -3,7 +3,7 @@ const router = express.Router();
 const DataModel= require('../model/data.model');
 const mongoose= require('mongoose');
 
-mongoose.set('strictQuery', true);
+
 
 router.get('/data', async (req, res) => {
     try {
