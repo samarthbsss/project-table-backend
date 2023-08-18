@@ -26,7 +26,7 @@ router.post('/data', async (req, res) => {
   
   router.put('/data/:id', async (req, res) => {
     try {
-      const id = req.params.id;
+      const{ id }= req.params;
       const updatedItem = req.body;
       const updatedData = await DataModel.findByIdAndUpdate(id, updatedItem, { new: true });
       res.json(updatedData);
