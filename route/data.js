@@ -8,7 +8,13 @@ const mongoose= require('mongoose');
 router.get('/data', async (req, res) => {
     try {
       const data = await DataModel.find();
-      res.json(data);
+      const transformedData = dataFromDB.map((item) => ({
+        ...item._doc,
+        date: item.date.toISOString().slice(0, 10) // Convert to YYYY-MM-DD format
+      }));
+      res.json(transformedData);
+
+      // res.json(data);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
