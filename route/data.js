@@ -8,7 +8,7 @@ const mongoose= require('mongoose');
 router.get('/data', async (req, res) => {
     try {
       const data = await DataModel.find();
-      const transformedData = dataFromDB.map((item) => ({
+      const transformedData = data.map((item) => ({
         ...item._doc,
         date: item.date.toISOString().slice(0, 10) // Convert to YYYY-MM-DD format
       }));
