@@ -13,6 +13,10 @@ const dataSchema= mongoose.Schema({
     date:{
         type:Date
     },
+    project:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"project"
+    }
 
 });
 

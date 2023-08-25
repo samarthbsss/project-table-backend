@@ -1,13 +1,26 @@
-// const express = require('express');
-// const router = express.Router();
-// const ProjectModel =require('../model/project.model.js');
+const express = require('express');
+const router = express.Router();
+const ProjectModel =require('../model/project.model.js');
 
-// router.get('/project',(req, res)=>{
-//     try {
-        
-//     } catch (error) {
-        
-//     }
-// });
+router.get('/project', async(req, res)=>{
+    try {
+        const project =await ProjectModel.find();
+        res.json(project)
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error :'Server error'});
+    }
+});
 
-// module.exports =router;
+router.post('/project', async(req, res)=>{
+    try {
+        const newData= req.body;
+        const createdData =await ProjectModel.create(newData);
+        res.json(createdData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error :'Server error'});
+    }
+});
+
+module.exports =router;

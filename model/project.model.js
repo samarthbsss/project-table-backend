@@ -9,11 +9,11 @@ const projectSchema= mongoose.Schema({
     },
     turbineframesr:{
         type:Number
-    },
-    data:[{
-        type:Schema.Types.ObjectId,
-        ref:'data'
-    }]
+    }
+    // project:{
+    //     type:mongoose.Schema.Types.ObjectId,
+    //     ref:"data"
+    // }
 
 });
 
