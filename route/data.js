@@ -8,10 +8,12 @@ const mongoose= require('mongoose');
 router.get('/data', async (req, res) => {
     try {
       const data = await DataModel.find();
+      console.log(data);
       const transformedData = data.map((item) => ({
         ...item._doc,
         date: item.date.toISOString().slice(0, 10) // Convert to YYYY-MM-DD format
       }));
+      console.log(transformedData);
       res.json(transformedData);
 
       // res.json(data);
@@ -25,7 +27,13 @@ router.get('/data', async (req, res) => {
 router.post('/data', async (req, res) => {
     try {
       const newData = req.body;
+      // const transformedData = newData.map((item) => ({
+      //   ...item._doc,
+      //   date: item.date.toISOString().slice(0, 10) // Convert to YYYY-MM-DD format
+      // }));
       const createdData = await DataModel.create(newData);
+      // const createdData = await DataModel.create(transformedData);
+    
       res.json(createdData);
     } catch (error) {
       console.error(error);
