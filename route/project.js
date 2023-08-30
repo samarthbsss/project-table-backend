@@ -23,4 +23,15 @@ router.post('/project', async(req, res)=>{
     }
 });
 
+router.delete('/project/:id', async(req, res)=>{
+    try {
+        const {id} = req.params
+        await ProjectModel.findByIdAndRemove(id);
+        res.json({ message: 'Employee deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: `Could not delete project ${error}` });
+    }
+})
+
 module.exports =router;
