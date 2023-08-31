@@ -8,7 +8,7 @@ const projectSchema= mongoose.Schema({
         type:Number
     },
     turbineframesr:{
-        type:Number
+        type:String
     }
     // project:{
     //     type:mongoose.Schema.Types.ObjectId,

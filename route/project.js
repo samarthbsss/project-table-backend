@@ -12,6 +12,17 @@ router.get('/project', async(req, res)=>{
     }
 });
 
+router.get('/project/:id', async(req, res)=>{
+    try {
+        const {id} = req.params;
+        const projectdata = await ProjectModel.findById(id);
+        res.json(projectdata);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error :`Could not get data on specfic id,${error}`})
+    }
+})
+
 router.post('/project', async(req, res)=>{
     try {
         const newData= req.body;
