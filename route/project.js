@@ -34,6 +34,25 @@ router.post('/project', async(req, res)=>{
     }
 });
 
+router.post('/project/:id/update', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+
+        // Find the project by ID and update it with the new data
+        const updatedData = await ProjectModel.findByIdAndUpdate(id, updateData, { new: true });
+
+        if (!updatedData) {
+            return res.status(404).json({ error: 'Project not found' });
+        }
+
+        res.json(updatedData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 router.delete('/project/:id', async(req, res)=>{
     try {
         const {id} = req.params
