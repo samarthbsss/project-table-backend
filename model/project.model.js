@@ -178,7 +178,8 @@ const projectSchema = mongoose.Schema({
         bottom: {
             ttldesc: String,
 
-        }
+        },
+      
     }],
     guidebladecarrier2: [{
         top: {
