@@ -21,7 +21,7 @@ const projectSchema = mongoose.Schema({
             date: Date
         }
     }],
-    exhastendcasing: [{
+    exhastendcasing : [{
         top: {
             ttldesc: String,
             hyd: String,
@@ -89,6 +89,11 @@ const projectSchema = mongoose.Schema({
         date: Date
     },
     passoutmanifold: {
+        ttldesc: String,
+        hyd: String,
+        date: Date
+    },
+    passinvalvecolumn: {
         ttldesc: String,
         hyd: String,
         date: Date
