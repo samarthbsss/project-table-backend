@@ -1,48 +1,48 @@
 const mongoose = require('mongoose');
 
 const projectSchema = mongoose.Schema({
-    customer: {
-        type: String
-    },
-    contactno: {
-        type: Number
-    },
-    turbineframesr: {
-        type: String
-    },
-    steamend: [{
-        top: {
-            ttldesc: String,
-            hyd: String,
-            date: Date
+        customer: {
+            type: String
         },
-        bottom: {
-            ttldesc: String,
-            date: Date
-        }
-    }],
-    exhastendcasing : [{
-        top: {
-            ttldesc: String,
-            hyd: String,
-            date: Date
+        contactno: {
+            type: Number
         },
-        bottom: {
-            ttldesc: String,
-            date: Date
-        }
-    }],
-    innercasing: [{
-        top: {
-            ttldesc: String,
-            hyd: String,
-            date: Date
+        turbineframesr: {
+            type: String
         },
-        bottom: {
-            ttldesc: String,
-            date: Date
-        }
-    }],
+        steamend: [{
+            top: {
+                ttldesc: String,
+                hyd: String,
+                date: Date
+            },
+            bottom: {
+                ttldesc: String,
+                date: Date
+            }
+        }],
+        exhastendcasing : [{
+            top: {
+                ttldesc: String,
+                hyd: String,
+                date: Date
+            },
+            bottom: {
+                ttldesc: String,
+                date: Date
+            }
+        }],
+        innercasing: [{
+            top: {
+                ttldesc: String,
+                hyd: String,
+                date: Date
+            },
+            bottom: {
+                ttldesc: String,
+                date: Date
+            }
+        }],
     stop$emergencyvalvebody1: {
         ttldesc: String,
         hyd: String,
