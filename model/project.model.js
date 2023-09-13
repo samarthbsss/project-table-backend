@@ -5,7 +5,7 @@ const projectSchema = mongoose.Schema({
             type: String
         },
         contactno: {
-            type: Number
+            type:  String
         },
         turbineframesr: {
             type: String
